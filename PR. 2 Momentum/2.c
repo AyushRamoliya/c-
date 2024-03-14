@@ -1,34 +1,37 @@
 // Write a Program to input electricity unit charges and calculate the total electricity bill according to the given condition:
 
+#include <stdio.h>
+main()
+{
+    int unit;
+    float amount,price,total;
 
-#include<stdio.h>
-void main(){
-    float unit,rs1,rs2,rs3,rs4;
+    printf("Enter total units: ");
+    scanf("%d", &unit);
 
-    printf("Enter Unit :");
-    scanf("%f",&unit);
 
-    rs1=unit*0.50;
-    rs2=unit*0.75;
-    rs3=unit*1.20;
-    rs4=unit*1.50;
-
-    if(unit<=50){
-        printf("the total electricity bil :%f",rs1);
-    }
-
-    else if(unit>50 && unit<=100)
+    
+    if(unit <= 50)
     {
-        printf("the total electricity bil :%f",rs2);
+        amount = unit * 0.50;
     }
-
-    else if(unit>150 && unit<=250)
+    else if(unit <= 150)
     {
-        printf("the total electricity bil :%f",rs3);
+        amount = 25 + ((unit-50) * 0.75);
+    }
+    else if(unit <= 250)
+    {
+        amount = 100 + ((unit-150) * 1.20);
+    }
+    else
+    {
+        amount = 220 + ((unit-250) * 1.50);
     }
 
-    else{
-        printf("the total electricity bil :%f",rs4);
-    }
+
+    price = amount * 0.20;
+    total = amount + price;
+
+    printf("Electricity Bill = Rs. %.2f", total);
 
 }
