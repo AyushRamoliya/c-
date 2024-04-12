@@ -4,11 +4,12 @@
 #include<stdio.h>
 
 int swap(int *n1, int *n2,int *n3){
-    int *t;
-    t=n1;
-    n1=n2;
-    n2=n3;
-    n3=t;
+    int t;
+
+    t=*n1;
+    *n1=*n2;
+    *n2=*n3;
+    *n3=t;
 
     printf("swap Value: %d\nswap Value: %d\nswap Value: %d",*n1,*n2,*n3);
 
